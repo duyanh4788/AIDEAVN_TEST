@@ -1,0 +1,21 @@
+const StudyPointStyle = {
+  ORAL_TEST_SCORES: "ORAL TEST SCORES",
+  ONE_PERIOD_TEST_SCORES: "ONE PERIOD TEST SCORES",
+  SEMESTER_GRADES_TEST_SCORES: "SEMESTER GRADES TEST SCORES",
+  MULTIPLE_CHOICE_TEST_SCORES: "MULTIPLE CHOICE TEST SCORES",
+};
+
+const Positions = {
+  TEACHER: "TEACHER",
+  PRINCIPAL: "PRINCIPAL",
+  STAFF: "STAFF",
+};
+
+const TeachSubjects = {
+  ENGLISH: "ENGLISH",
+  MATH: "MATH",
+  LITERATURE: "LITERATURE",
+  HISTORY: "HISTORY",
+};
+
+module.exports = { Positions, TeachSubjects, StudyPointStyle };
