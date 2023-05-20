@@ -22,6 +22,15 @@ const findStudentBestService = async (id) => {
       WHERE study_points.subjects IN ('ENGLISH', 'MATH', 'LITERATURE') AND study_points.testMarks >= 8.0
       GROUP BY students.id, students.fullName, students.classLevel
       HAVING MIN(study_points.testMarks) >= 6.5 AND AVG(study_points.testMarks) >= 8.0
+      AND NOT EXISTS (
+        SELECT 1
+        FROM educations.study_points
+        WHERE student_id = students.id
+          AND subjects != 'ENGLISH'
+          AND subjects != 'MATH'
+          AND subjects != 'LITERATURE'
+          AND testMarks < 6.5
+      )
     `;
     const result = await sequelize.query(query, {
       type: sequelize.QueryTypes.SELECT,
